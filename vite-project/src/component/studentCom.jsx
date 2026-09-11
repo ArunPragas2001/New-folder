@@ -1,31 +1,20 @@
-import { useState } from "react";
-/*export default function StudentCom(props){
-return(
+import { useState } from 'react'
+
+export default function StudentCom({ name, course }) {
+  const [studentName, setStudentName] = useState("")
+
+  const showName = () => {
+    setStudentName(name)
+  }
+
+  return (
     <div>
-    <h1>Student Information </h1>
-    <p>Name:{props.name}</p>    
-    <p>Course:{props.course}</p>
+      <h1>Student Information</h1>
+
+      <p>Name: {studentName}</p>
+      <p>Course: {course}</p>
+
+      <button onClick={showName}>Show Name</button>
     </div>
-);*/
-
-import { useState } from "react";
-
-export default function StudentCom({ name, course, age }) {
-    const [studentName, setStudentName] = useState("");
-
-    const showName = () => {
-        setStudentName(name);
-    };
-
-    return (
-        <div>
-            <h1>Student Information</h1>
-
-            <p>Name: {studentName}</p>
-            <p>Course: {course}</p>
-            <p>Age: {age}</p>
-
-            <button onClick={showName}>Show Name</button>
-        </div>
-    );
+  )
 }
